@@ -1,0 +1,9 @@
+# Cài bằng install.sh. Các gói dưới đây cài qua pip trong virtualenv.
+paho-mqtt>=2.0
+adafruit-circuitpython-dht>=4.0
+rpi-lgpio>=0.6; sys_platform == 'linux'
+
+# KHÔNG cài qua pip, cài bằng apt (install.sh đã làm):
+#   python3-opencv   (cv2 + haarcascade_fullbody.xml)
+#   python3-picamera2 (camera CSI)
+#   python3-numpy, python3-rpi-lgpio (hoặc python3-rpi.gpio), gpiod
