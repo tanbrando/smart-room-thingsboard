@@ -1,10 +1,10 @@
 # Smart Room Digital Twin - ThingsBoard IoT System
 
 Hệ thống IoT Digital Twin điều khiển và giám sát phòng học/phòng làm việc thông minh chạy trên **Raspberry Pi 4B**, kết nối với nền tảng **ThingsBoard** thông qua 4 Virtual Device MQTT độc lập:
-1. **A101 Environment Sensor**: Đọc cảm biến nhiệt độ & độ ẩm DHT11, đồng bộ cấu hình ngưỡng `temperatureThreshold`.
-2. **A101 Presence Detector**: Nhận diện người qua Camera CSI (OpenCV Haar Cascade), đồng bộ thời gian chờ tắt `absenceTimeout`.
-3. **A101 Smart Fan**: Động cơ quạt DC (L298N) tự động bật khi có người và trời nóng (kèm độ trễ nhiệt hysteresis).
-4. **A101 Smart Light**: Đèn LED tự động bật khi có người, tự tắt khi phòng trống quá thời gian chờ.
+1. **Environment Sensor**: Đọc cảm biến nhiệt độ & độ ẩm DHT11, đồng bộ cấu hình ngưỡng `temperatureThreshold`.
+2. **Presence Detector**: Nhận diện người qua Camera CSI (OpenCV Haar Cascade), đồng bộ thời gian chờ tắt `absenceTimeout`.
+3. **Smart Fan**: Động cơ quạt DC (L298N) tự động bật khi có người và trời nóng (kèm độ trễ nhiệt hysteresis).
+4. **Smart Light**: Đèn LED tự động bật khi có người, tự tắt khi phòng trống quá thời gian chờ.
 
 ---
 
