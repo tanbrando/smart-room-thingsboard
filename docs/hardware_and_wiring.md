@@ -19,7 +19,7 @@ Các chân GPIO trong code được định nghĩa theo chuẩn **BCM** (Broadco
 | | **IN2** | **GPIO 22** | **Chân 15** | Digital Output | Điều khiển hướng quay / đảo chiều |
 | | **ENA (PWM)** | **GPIO 18** | **Chân 12** | PWM Hardware | Điều chỉnh tốc độ quạt (Duty cycle 0.0 - 1.0) |
 | | **GND** | - | **Chân 14** (GND) | Ground chung | **Bắt buộc nối chung GND nguồn ngoài với GND của Pi** |
-| | **+12V / +5V (VCC)**| - | **Cực Dương (+) Nguồn ngoài** | Nguồn động cơ độc lập | **TUYỆT ĐỐI KHÔNG** lấy từ chân 5V của Pi |
+| | **+12V / +5V (VCC)**| - | **Cực Dương (+) Nguồn ngoài** | Nguồn động cơ độc lập | **CÓ THỂ** lấy từ chân 5V của Pi |
 | *Quạt (Module MOSFET 1 chân)* | **SIG** | **GPIO 27** | **Chân 13** | PWM / Digital Output | Bỏ trống `FAN_PIN_IN2` và `FAN_PIN_ENABLE` trong cấu hình |
 | **Camera CSI** | **Cáp FPC 15-pin** | - | **Cổng CSI trên Pi** | Dữ liệu MIPI-CSI | Nằm giữa cổng micro-HDMI và jack âm thanh 3.5mm |
 
@@ -73,7 +73,7 @@ Các chân GPIO trong code được định nghĩa theo chuẩn **BCM** (Broadco
 ## 3. Bản đồ chân Header 40-Pin Raspberry Pi 4B tham khảo
 
 ```text
-               3.3V Power [ 1] [ 2] 5V Power
+(DHT11 VCC)  3.3V Power [ 1] [ 2] 5V Power
              GPIO 2 (SDA) [ 3] [ 4] 5V Power
              GPIO 3 (SCL) [ 5] [ 6] Ground           <-- DHT11 GND
 (DHT11 DATA) GPIO 4       [ 7] [ 8] GPIO 14 (TXD)
@@ -111,11 +111,3 @@ Sau khi đấu dây xong, bạn có thể kiểm tra hệ thống theo các bư�
 
 ---
 
-## 5. Các nguyên tắc an toàn quan trọng
-
-1. **Tuyệt đối không cấp nguồn động cơ quạt từ chân 5V của Raspberry Pi:**
-   - Dòng khởi động và dòng cảm ứng ngược (back-EMF) từ động cơ DC có thể làm tụt áp gây sập nguồn Pi (brownout) hoặc làm cháy chip nguồn. Hãy dùng pin hoặc nguồn adapter ngoài riêng biệt.
-2. **Nối chung Mass (Common GND):**
-   - Chân GND của nguồn nuôi động cơ ngoài **bắt buộc** phải nối chung với chân GND của Raspberry Pi để mức logic điều khiển (HIGH/LOW) có cùng điện thế tham chiếu.
-3. **Điện trở hạn dòng cho LED:**
-   - Luôn sử dụng điện trở 150Ω - 330Ω nối tiếp với chân Anode hoặc Cathode của LED để tránh chập tải dòng ra trên chân GPIO 17 (dòng tối đa khuyến nghị mỗi chân GPIO của Pi chỉ khoảng 16mA).

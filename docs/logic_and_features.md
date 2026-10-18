@@ -10,10 +10,10 @@ Toàn bộ **Shared Attributes** được cấu hình trực tiếp trên từng
 
 | Thiết bị | Phần cứng | Dữ liệu gửi lên (Telemetry) | Shared Attributes nhận về | RPC hỗ trợ |
 | :--- | :--- | :--- | :--- | :--- |
-| **A101 Environment Sensor** | Cảm biến DHT11 | `temperature`, `humidity` (định kỳ) | `temperatureThreshold` (float, °C) | - |
-| **A101 Presence Detector** | Camera CSI + OpenCV | `personDetected` (chỉ gửi khi đổi) | `absenceTimeout` (float, giây) | - |
-| **A101 Smart Fan** | Động cơ DC (L298N) | `state` (`true`/`false`) | `autoMode` (boolean) | `getState`, `setState`, `toggle` |
-| **A101 Smart Light** | Đèn LED | `state` (`true`/`false`) | `autoMode` (boolean) | `getState`, `setState`, `toggle` |
+| **Environment Sensor** | Cảm biến DHT11 | `temperature`, `humidity` (định kỳ) | `temperatureThreshold` (float, °C) | - |
+| **Presence Detector** | Camera CSI + OpenCV | `personDetected` (chỉ gửi khi đổi) | `absenceTimeout` (float, giây) | - |
+| **Smart Fan** | Động cơ DC (L298N) | `state` (`true`/`false`) | `autoMode` (boolean) | `getState`, `setState`, `toggle` |
+| **Smart Light** | Đèn LED | `state` (`true`/`false`) | `autoMode` (boolean) | `getState`, `setState`, `toggle` |
 
 ---
 
